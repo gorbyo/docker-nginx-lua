@@ -1,4 +1,4 @@
-# Version: 0.0.2
+# Version: 0.0.3
 FROM centos:latest
 MAINTAINER Oleh Horbachov <gorbyo@gmail.com>
 RUN yum clean all \
@@ -7,7 +7,7 @@ RUN yum clean all \
     && yum groups install 'Development Tools' -y
 RUN yum install luajit luajit-devel openssl openssl-devel pcre pcre-devel zlib zlib-devel wget -y \
     && yum clean all
-RUN wget -c http://nginx.org/download/nginx-1.13.6.tar.gz \
+RUN wget -c http://nginx.org/download/nginx-1.13.7.tar.gz \
     && wget -c https://github.com/simpl/ngx_devel_kit/archive/v0.3.0.tar.gz \
     && wget -c https://github.com/openresty/lua-nginx-module/archive/v0.10.11.tar.gz
 RUN tar -xzvf nginx-1.13.6.tar.gz &&  tar -xzvf v0.3.0.tar.gz && tar -xzvf v0.10.11.tar.gz
